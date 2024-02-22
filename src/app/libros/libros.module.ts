@@ -6,6 +6,7 @@ import { LibrosByRangoPrecioComponent } from './pages/libros-by-rango-precio/lib
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { LayoutPagesComponent } from './pages/layout-pages/layout-pages.component';
 import { LibroPagesComponent } from './pages/libro-pages/libro-pages.component';
+import { LibroRoutingModule } from './libros-routing.module';
 
 
 
@@ -19,7 +20,8 @@ import { LibroPagesComponent } from './pages/libro-pages/libro-pages.component';
     LibroPagesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LibroRoutingModule,
   ]
 })
 export class LibrosModule { }

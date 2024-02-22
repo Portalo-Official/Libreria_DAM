@@ -10,7 +10,7 @@ export const routes: Routes = [
     component: LayoutPagesComponent,
     children: [
                 {path:'list', component: ListPageComponent},
-                {path:':isbn', component: LibroPagesComponent},
+                {path:'libro/:isbn', component: LibroPagesComponent},
                 {path:'**', redirectTo:'list'},
               ],
   }
@@ -20,4 +20,4 @@ export const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class LibroRoutingModule { }

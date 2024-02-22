@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenubarComponent } from './menubar/menubar.component';
+import { MenubarComponente } from './menubar/menubar.component';
 import { SearchboxComponent } from './searchbox/searchbox.component';
+import { PrimeNGModule } from '../primeng/prime.module';
 
 
 
 @NgModule({
   declarations: [
-    MenubarComponent,
-    SearchboxComponent
+    MenubarComponente,
+    SearchboxComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PrimeNGModule
+  ],
+  exports:[
+    MenubarComponente,
   ]
 })
 export class SharedModule { }

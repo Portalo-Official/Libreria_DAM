@@ -1,10 +1,11 @@
 
-const environmets = {
-  baseUrl: '',
+export const environmets = {
+  baseUrl: 'http://localhost:3000',
   endPoint: {
-    libros: '',
-    temas:'',
-    autor:'',
-    edicion:''
+    libros: 'libros',
+    temas:'temas',
+    autor:'autores',
+    edicion:'ediciones',
+    formato:'formatos',
   }
 }

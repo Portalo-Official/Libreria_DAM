@@ -1,0 +1,377 @@
+
+{
+
+  "temas":[
+    {
+        "Id": 3,
+        "Tipo": "Aventura"
+    },
+    {
+        "Id": 5,
+        "Tipo": "Ciencia Ficcion"
+    },
+    {
+        "Id": 4,
+        "Tipo": "Fantasia"
+    },
+    {
+        "Id": 7,
+        "Tipo": "Historico"
+    },
+    {
+        "Id": 6,
+        "Tipo": "Misterio"
+    },
+    {
+        "Id": 2,
+        "Tipo": "Romance"
+    },
+    {
+        "Id": 1,
+        "Tipo": "Terror"
+    }
+  ],
+  "autores":[
+    {
+        "Id": 7,
+        "Nombre": "Agatha Christie"
+    },
+    {
+        "Id": 11,
+        "Nombre": "Beltran Labios Bonitos"
+    },
+    {
+        "Id": 12,
+        "Nombre": "Caballero Chavero"
+    },
+    {
+        "Id": 15,
+        "Nombre": "Cassandra Clare"
+    },
+    {
+        "Id": 1,
+        "Nombre": "Gabriel Garcia Marquez"
+    },
+    {
+        "Id": 4,
+        "Nombre": "George R.R. Martin"
+    },
+    {
+        "Id": 2,
+        "Nombre": "Haruki Murakami"
+    },
+    {
+        "Id": 5,
+        "Nombre": "Isabel Allende"
+    },
+    {
+        "Id": 14,
+        "Nombre": "J. K. Rowling"
+    },
+    {
+        "Id": 3,
+        "Nombre": "J.K. Rowling"
+    },
+    {
+        "Id": 9,
+        "Nombre": "Jane Austen"
+    },
+    {
+        "Id": 6,
+        "Nombre": "Paulo Coelho"
+    },
+    {
+        "Id": 13,
+        "Nombre": "Rebecca Yarros"
+    },
+    {
+        "Id": 8,
+        "Nombre": "Stephen King"
+    },
+    {
+        "Id": 10,
+        "Nombre": "Victor Hugo"
+    }
+  ],
+  "ediciones":[
+    {
+        "Id": 1,
+        "Tipo": "Especial"
+    },
+    {
+        "Id": 2,
+        "Tipo": "Aniversario"
+    },
+    {
+        "Id": 3,
+        "Tipo": "Pirata"
+    },
+    {
+        "Id": 4,
+        "Tipo": "Especial"
+    },
+    {
+        "Id": 5,
+        "Tipo": "Aniversario"
+    },
+    {
+        "Id": 6,
+        "Tipo": "Pirata"
+    },
+    {
+        "Id": 7,
+        "Tipo": "Coleccionista"
+    }
+  ],
+  "formatos":[
+    {
+        "Id": 1,
+        "Tipo": "Tapa Blanda"
+    },
+    {
+        "Id": 2,
+        "Tipo": "Tapa Dura"
+    },
+    {
+        "Id": 3,
+        "Tipo": "Digital"
+    },
+    {
+        "Id": 4,
+        "Tipo": "De bolsillo"
+    }
+  ],
+
+  "libros": [
+    {
+        "Id": 2,
+        "ISBN": "9780307352149",
+        "Titulo": "1Q84",
+        "Precio": 21.99,
+        "Tema": "Ciencia Ficcion",
+        "Autor": "Haruki Murakami",
+        "Edicion": "Aniversario",
+        "Formato": "Tapa Blanda",
+        "Cantidad": 80,
+        "URL": "https://i.ibb.co/tZjjw69/1q84-libros-1-y-2-9788483836262.webp"
+    },
+    {
+        "Id": 5,
+        "ISBN": "9788408190013",
+        "Titulo": "Eva Luna",
+        "Precio": 27.99,
+        "Tema": "Fantasia",
+        "Autor": "Isabel Allende",
+        "Edicion": "Especial",
+        "Formato": "Tapa Blanda",
+        "Cantidad": 110,
+        "URL": "https://i.ibb.co/jH1nKkB/visd-0000-JPG01-BVP.jpg"
+    },
+    {
+        "Id": 7,
+        "ISBN": "9780062693662",
+        "Titulo": "Asesinato en el Orient Express",
+        "Precio": 19.99,
+        "Tema": "Misterio",
+        "Autor": "Agatha Christie",
+        "Edicion": "Especial",
+        "Formato": "Tapa Blanda",
+        "Cantidad": 95,
+        "URL": "https://i.ibb.co/KX9LqLF/images.jpg"
+    },
+    {
+        "Id": 11,
+        "ISBN": "9780307474278",
+        "Titulo": "Crónica del pájaro que da cuerda al mundo",
+        "Precio": 20.99,
+        "Tema": "Misterio",
+        "Autor": "Haruki Murakami",
+        "Edicion": "Especial",
+        "Formato": "Tapa Blanda",
+        "Cantidad": 65,
+        "URL": "https://i.ibb.co/Pmrv9jq/portada-cronica-del-pajaro-que-da-cuerda-al-mundo-haruki-murakami-201609281234.webp"
+    },
+    {
+        "Id": 15,
+        "ISBN": "9780491272355",
+        "Titulo": "El Silmarillion",
+        "Precio": 28.99,
+        "Tema": "Ciencia Ficcion",
+        "Autor": "J.K. Rowling",
+        "Edicion": "Aniversario",
+        "Formato": "Tapa Blanda",
+        "Cantidad": 78,
+        "URL": "https://i.ibb.co/m4J43Vk/81-Z7-OWa-Bs-ML-AC-UF1000-1000-QL80.jpg"
+    },
+    {
+        "Id": 1,
+        "ISBN": "9780007117116",
+        "Titulo": "Cien Años de Soledad",
+        "Precio": 24.99,
+        "Tema": "Fantasia",
+        "Autor": "Gabriel Garcia Marquez",
+        "Edicion": "Especial",
+        "Formato": "Tapa Dura",
+        "Cantidad": 100,
+        "URL": "https://i.ibb.co/s9GR95M/images.jpg"
+    },
+    {
+        "Id": 4,
+        "ISBN": "9780553103540",
+        "Titulo": "Juego de Tronos",
+        "Precio": 29.99,
+        "Tema": "Historico",
+        "Autor": "George R.R. Martin",
+        "Edicion": "Aniversario",
+        "Formato": "Tapa Dura",
+        "Cantidad": 90,
+        "URL": "https://i.ibb.co/z4TcJFm/Juego-de-tronos.jpg"
+    },
+    {
+        "Id": 6,
+        "ISBN": "9780061122415",
+        "Titulo": "El Alquimista",
+        "Precio": 25.99,
+        "Tema": "Ciencia Ficcion",
+        "Autor": "Paulo Coelho",
+        "Edicion": "Aniversario",
+        "Formato": "Tapa Dura",
+        "Cantidad": 70,
+        "URL": "https://i.ibb.co/GCcSHKL/portada-el-alquimista-paulo-coelho-201612191218.webp"
+    },
+    {
+        "Id": 10,
+        "ISBN": "9780140449976",
+        "Titulo": "Los Miserables",
+        "Precio": 15.99,
+        "Tema": "Ciencia Ficcion",
+        "Autor": "Victor Hugo",
+        "Edicion": "Aniversario",
+        "Formato": "Tapa Dura",
+        "Cantidad": 105,
+        "URL": "https://i.ibb.co/xG8r92K/img-54-0-big.jpg"
+    },
+    {
+        "Id": 13,
+        "ISBN": "9758410628688",
+        "Titulo": "Harry Potter y el prisionero de Azkaban",
+        "Precio": 29.79,
+        "Tema": "Fantasia",
+        "Autor": "J.K. Rowling",
+        "Edicion": "Especial",
+        "Formato": "Tapa Dura",
+        "Cantidad": 40,
+        "URL": "https://i.ibb.co/ScjcV4x/51-g28v-UNDL.jpg"
+    },
+    {
+        "Id": 14,
+        "ISBN": "9788011593164",
+        "Titulo": "El nombre del viento",
+        "Precio": 24.99,
+        "Tema": "Historico",
+        "Autor": "Jane Austen",
+        "Edicion": "Especial",
+        "Formato": "Tapa Dura",
+        "Cantidad": 92,
+        "URL": "https://i.ibb.co/HNYpGxk/978840133720.jpg"
+    },
+    {
+        "Id": 16,
+        "ISBN": "9780503474192",
+        "Titulo": "Cazadores de sombras: Ciudad de Hueso",
+        "Precio": 21.99,
+        "Tema": "Fantasia",
+        "Autor": "Cassandra Clare",
+        "Edicion": "Especial",
+        "Formato": "Tapa Dura",
+        "Cantidad": 102,
+        "URL": "https://i.ibb.co/h1gZryV/51-I7qd-Op6-GL-AC-UF1000-1000-QL80.jpg"
+    },
+    {
+        "Id": 17,
+        "ISBN": "9760007774242",
+        "Titulo": "Cazadores de sombras: Ciudad de las almas perdidas",
+        "Precio": 21.99,
+        "Tema": "Fantasia",
+        "Autor": "Cassandra Clare",
+        "Edicion": "Especial",
+        "Formato": "Tapa Dura",
+        "Cantidad": 4,
+        "URL": "https://i.ibb.co/gDRwr2C/visd-0000-JPG019-T0.jpg"
+    },
+    {
+        "Id": 3,
+        "ISBN": "9788498389327",
+        "Titulo": "Harry Potter y la Piedra Filosofal",
+        "Precio": 18.99,
+        "Tema": "Misterio",
+        "Autor": "J.K. Rowling",
+        "Edicion": "Especial",
+        "Formato": "Digital",
+        "Cantidad": 120,
+        "URL": "https://i.ibb.co/3pmnqr1/51ux-Z1-Ek-T4-L.jpg"
+    },
+    {
+        "Id": 9,
+        "ISBN": "9780141439563",
+        "Titulo": "Orgullo y Prejuicio",
+        "Precio": 23.99,
+        "Tema": "Fantasia",
+        "Autor": "Jane Austen",
+        "Edicion": "Especial",
+        "Formato": "Digital",
+        "Cantidad": 75,
+        "URL": "https://i.ibb.co/48xBZb4/9788467070835.jpg"
+    },
+    {
+        "Id": 8,
+        "ISBN": "9780307743657",
+        "Titulo": "It",
+        "Precio": 26.99,
+        "Tema": "Historico",
+        "Autor": "Stephen King",
+        "Edicion": "Aniversario",
+        "Formato": "De bolsillo",
+        "Cantidad": 85,
+        "URL": "https://i.ibb.co/G2d7GLZ/It-1986-front-cover-first-edition-1.jpg"
+    },
+    {
+        "Id": 12,
+        "ISBN": "9788490628588",
+        "Titulo": "Harry Potter y las Reliquias de la Muerte",
+        "Precio": 22.99,
+        "Tema": "Fantasia",
+        "Autor": "J.K. Rowling",
+        "Edicion": "Aniversario",
+        "Formato": "De bolsillo",
+        "Cantidad": 88,
+        "URL": "https://i.ibb.co/ZxSJTq9/514rkihbko-L.jpg"
+    },
+    {
+        "Id": 18,
+        "ISBN": "9710807117511",
+        "Titulo": "Del Amor a otros Demonios",
+        "Precio": 49.99,
+        "Tema": "Fantasia",
+        "Autor": "Gabriel Garcia Marquez",
+        "Edicion": "Especial",
+        "Formato": "De bolsillo",
+        "Cantidad": 10,
+        "URL": "https://i.ibb.co/ZSyZ6cy/978849759242.jpg"
+    },
+    {
+        "Id": 20,
+        "ISBN": "9760807237519",
+        "Titulo": "Libro Prueba Prototipo",
+        "Precio": 129.99,
+        "Tema": "Fantasia",
+        "Autor": "Beltran Labios Bonitos",
+        "Edicion": "Especial",
+        "Formato": "De bolsillo",
+        "Cantidad": 10,
+        "URL": "https://i.ibb.co/mz6F1Kp/167219770-127523866011194-8434310988880472619-n.jpg"
+    }
+
+
+]
+}
