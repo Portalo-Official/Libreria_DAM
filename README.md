@@ -1,6 +1,10 @@
 # LibreriaDAM
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+Aplicacion en Angular para el modulo de Desarrollo de interfaces en el Grado Superior de Desarrollo de Aplicaciones Multiplataforma.
+
+## Development backend
+
+Run `ng backdev` for a dev database with json-server.
 
 ## Development server
 
