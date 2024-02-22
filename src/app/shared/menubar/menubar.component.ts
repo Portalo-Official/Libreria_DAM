@@ -1,4 +1,5 @@
 
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, PrimeIcons } from 'primeng/api';
 
@@ -11,100 +12,42 @@ export class MenubarComponente implements OnInit {
 
     ngOnInit() {
         this.items = [
+
+            {
+                label: 'Home',
+                icon: PrimeIcons.HOME,
+                routerLink:'home',
+                // style: {' margin-left': '12rem'},
+            },
+            {
+              separator:true, //no se como poner espacio
+            },
             {
                 label: 'Libros',
                 icon: PrimeIcons.BOOK,
-                routerLink:'libros'
+                routerLink:'libros',
+                // style: {' margin-left': '12rem'},
             },
             {
-                label: 'Edit',
-                icon: 'pi pi-fw pi-pencil',
-                items: [
-                    {
-                        label: 'Left',
-                        icon: 'pi pi-fw pi-align-left'
-                    },
-                    {
-                        label: 'Right',
-                        icon: 'pi pi-fw pi-align-right'
-                    },
-                    {
-                        label: 'Center',
-                        icon: 'pi pi-fw pi-align-center'
-                    },
-                    {
-                        label: 'Justify',
-                        icon: 'pi pi-fw pi-align-justify'
-                    }
-                ]
+                label: 'Autores',
+                icon: 'pi pi-fw pi-user-edit',
+                style: {"color":"blue"},
+                routerLink:'autores',
             },
             {
-                label: 'Users',
-                icon: 'pi pi-fw pi-user',
-                items: [
-                    {
-                        label: 'New',
-                        icon: 'pi pi-fw pi-user-plus'
-                    },
-                    {
-                        label: 'Delete',
-                        icon: 'pi pi-fw pi-user-minus'
-                    },
-                    {
-                        label: 'Search',
-                        icon: 'pi pi-fw pi-users',
-                        items: [
-                            {
-                                label: 'Filter',
-                                icon: 'pi pi-fw pi-filter',
-                                items: [
-                                    {
-                                        label: 'Print',
-                                        icon: 'pi pi-fw pi-print'
-                                    }
-                                ]
-                            },
-                            {
-                                icon: 'pi pi-fw pi-bars',
-                                label: 'List'
-                            }
-                        ]
-                    }
-                ]
+                label: 'Temas',
+                icon: PrimeIcons.PALETTE,
+                routerLink:'temas',
             },
             {
-                label: 'Events',
-                icon: 'pi pi-fw pi-calendar',
-                items: [
-                    {
-                        label: 'Edit',
-                        icon: 'pi pi-fw pi-pencil',
-                        items: [
-                            {
-                                label: 'Save',
-                                icon: 'pi pi-fw pi-calendar-plus'
-                            },
-                            {
-                                label: 'Delete',
-                                icon: 'pi pi-fw pi-calendar-minus'
-                            }
-                        ]
-                    },
-                    {
-                        label: 'Archieve',
-                        icon: 'pi pi-fw pi-calendar-times',
-                        items: [
-                            {
-                                label: 'Remove',
-                                icon: 'pi pi-fw pi-calendar-minus'
-                            }
-                        ]
-                    }
-                ]
+                label: 'Formato',
+                icon: 'pi  pi-box',
+                routerLink:'formatos',
             },
             {
-                label: 'Quit',
-                icon: 'pi pi-fw pi-power-off'
+                label: 'Edicion',
+                icon: 'pi pi-fw pi-power-off',
+                routerLink:'ediciones',
             }
         ];
     }

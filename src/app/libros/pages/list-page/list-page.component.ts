@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Libro } from '../../interfaces/libreria.interface';
+import { Libro } from '../../../interfaces/libreria.interface';
+import { LibroService } from '../../../services/libro.service';
 
 @Component({
   selector: 'app-list-page',
@@ -9,10 +10,11 @@ import { Libro } from '../../interfaces/libreria.interface';
 export class ListPageComponent implements OnInit{
   public libros: Array<Libro> = [];
 
-  constructor(){}
+  constructor( private libroService: LibroService){}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.libroService.getAll()
+                    .subscribe( resp => this.libros = resp);
   }
 
 

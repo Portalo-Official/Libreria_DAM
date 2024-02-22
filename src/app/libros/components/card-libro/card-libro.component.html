@@ -1,0 +1,12 @@
+<p-card [header]="libro.Titulo" [subheader]="libro.Autor" class=" w-min">
+  <ng-template pTemplate="header">
+    <shared-lazy-image [url]="libro.URL" [name]="libro.Titulo || 'No name'"  ></shared-lazy-image>
+    <!-- <img [alt]="libro.Titulo" [src]="libro.URL" /> -->
+  </ng-template>
+  <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  </p>
+  <p-footer class="flex  justify-content-end">
+    <p-button label="Ver mas" icon="pi pi-plus" class=" flex align-items-center"></p-button>
+  </p-footer>
+</p-card>

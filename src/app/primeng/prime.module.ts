@@ -5,8 +5,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
 import { FieldsetModule } from 'primeng/fieldset';
 import { PanelModule} from "primeng/panel";
-
-
+import { SkeletonModule } from 'primeng/skeleton';
+import { ChipModule } from 'primeng/chip';
 
 @NgModule({
   declarations: [],
@@ -14,15 +14,16 @@ import { PanelModule} from "primeng/panel";
     ButtonModule,
     CommonModule,
     MenubarModule,
-
   ],
   exports:[
     ButtonModule,
     ButtonModule,
     CardModule,
+    ChipModule,
     FieldsetModule,
     MenubarModule,
     PanelModule,
+    SkeletonModule,
   ]
 })
 export class PrimeNGModule { }
