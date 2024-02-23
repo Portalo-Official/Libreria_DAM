@@ -13,8 +13,14 @@ export class ListPageComponent implements OnInit{
   constructor( private libroService: LibroService){}
 
   ngOnInit(): void {
+    console.log("Hey holaaa :DDDDDDDDD");
+
     this.libroService.getAll()
-                    .subscribe( resp => this.libros = resp);
+                    .subscribe( resp =>{
+                      console.log("Llego aqui subscribe");
+
+                      this.libros = resp;
+                    });
   }
 
 
