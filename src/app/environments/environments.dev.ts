@@ -1,22 +1,22 @@
 
-export const environmets = {
-  baseUrl: 'http://localhost:3000',
-  endPoint: {
-    libros: 'libros',
-    temas:'temas',
-    autor:'autores',
-    edicion:'ediciones',
-    formato:'formatos',
-  }
-}
-
 // export const environmets = {
-//   baseUrl: 'https://localhost:44373/api',
+//   baseUrl: 'http://localhost:3000',
 //   endPoint: {
-//     libros: 'libro/libro-controller',
-//     temas:'tema/tema-controller',
-//     autor:'autor/autores-controller',
-//     edicion:'edicion/ediciones-controller',
-//     formato: 'formato/formatos-controller'
+//     libros: 'libros',
+//     temas:'temas',
+//     autor:'autores',
+//     edicion:'ediciones',
+//     formato:'formatos',
 //   }
 // }
+
+export const environmets = {
+  baseUrl: 'https://localhost:44373/api',
+  endPoint: {
+    libros: 'libro/libro-controller',
+    temas:'tema/tema-controller',
+    autor:'autor/autores-controller',
+    edicion:'edicion/ediciones-controller',
+    formato: 'formato/formatos-controller'
+  }
+}

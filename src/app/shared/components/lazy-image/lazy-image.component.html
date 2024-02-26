@@ -2,6 +2,7 @@
 <div class="d-flex justify-content-center">
   <img [src]="url" [alt]="name"
     class="card-img-top animate__animated animate__fadeIn"
+    height="350"
     (load)="onLoad()"
     [ngStyle]="{display : hasLoeaded ? '': 'none'}"/>
 

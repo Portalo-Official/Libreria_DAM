@@ -21,3 +21,6 @@ body{
   height: 25px;
   color: burlywood;
 }
+::ng-deep .p-card{
+  height: 200px;
+}
