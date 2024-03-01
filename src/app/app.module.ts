@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// ** provideHttpClient(withFetch()) para el siguiente warning
+// NG02801: Angular detected that `HttpClient` is not configured to use `fetch` APIs.
+// It's strongly recommended to enable `fetch` for applications that use Server-Side
+// Rendering for better performance and compatibility. To enable `fetch`, add the
+// `withFetch()` to the `provideHttpClient()` call at the root of the application.

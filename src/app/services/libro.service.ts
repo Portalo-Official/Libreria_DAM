@@ -18,11 +18,7 @@ export class LibroService implements DaoLibreria<Libro, string>{
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<Libro[]>{
-
-    // let url = 'https://localhost:44373/api/libro/libro-controller';
     let url = `${this.BaseURL}/${this.endpoint}`;
-    // console.log({url});
-
     return this.http.get<Array<Libro>>(url)
                     .pipe(
                       catchError( () => of([]))
@@ -32,6 +28,7 @@ export class LibroService implements DaoLibreria<Libro, string>{
   delete(k: string): Boolean {
     throw new Error('Method not implemented.');
   }
+
   /**
    * Buscar el libro por el ISBN, retornando una lista de libro conteniendo
    * el resultado de la busqueda
@@ -40,27 +37,23 @@ export class LibroService implements DaoLibreria<Libro, string>{
    */
   getByID(k: string): Observable<Libro[]> {
 
-    let params : HttpParams  = new HttpParams()
-    .set('ISBN', k);
-
-    // console.log(params.getAll('ISBN'));
-    let requestLibro = JSON.stringify({ISBN : k});
-
-    let options = {
-      header : {'Content-Type':'application/json'},
-      body: {ISBN: k},
-      params: params
+    return this.http.get<ResponseLibro>(`${this.BaseURL}/${this.endpoint}/isbn/${k}`)
+    .pipe(
+      map( resp => [resp.Data]),
+      catchError( () => of([]))
+      );
     }
+    update(t: Libro): Boolean {
+      throw new Error('Method not implemented.');
+    }
+    // console.log(params.getAll('ISBN'));
+    // let requestLibro = JSON.stringify({ISBN : k});
 
-    return this.http.get<ResponseLibro>(`${this.BaseURL}/${this.endpoint}/isbn/${k}`, options)
-              .pipe(
-                map( resp => [resp.Data]),
-                catchError( () => of([]))
-              );
-  }
-  update(t: Libro): Boolean {
-    throw new Error('Method not implemented.');
-  }
+    // let options = {
+    //   header : {'Content-Type':'application/json'},
+    //   body: {ISBN: k},
+    //   params: params
+    // }
 
 
 }
