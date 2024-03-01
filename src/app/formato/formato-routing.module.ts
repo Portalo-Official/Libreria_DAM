@@ -12,7 +12,7 @@ const routes: Routes = [
     component:LayoutFormatoComponent,
     children:[
       {path:'list', component: ListFormatoComponent},
-      {path:'edit', component: EditFormatoComponent},
+      {path:'edit/:id', component: EditFormatoComponent},
       {path:'new', component: NewFormatoComponent},
       {path:'**', redirectTo:'list'},
     ],

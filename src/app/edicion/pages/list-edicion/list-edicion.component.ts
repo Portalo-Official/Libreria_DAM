@@ -11,8 +11,8 @@ import { EdicionService } from '../../../services/edicion.service';
 export class ListEdicionComponent implements OnInit{
   public ediciones: Array<Edicion> = [];
   constructor( private edicionService : EdicionService){}
-
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.edicionService.getAll()
+                      .subscribe(resp=>this.ediciones=resp);
   }
 }

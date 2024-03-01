@@ -6,6 +6,7 @@ import { NewAutorComponent } from './pages/new-autor/new-autor.component';
 import { ListAutorComponent } from './pages/list-autor/list-autor.component';
 import { EditAutorComponent } from './pages/edit-autor/edit-autor.component';
 import { LayoutAutorComponent } from './pages/layout-autor/layout-autor.component';
+import { PrimeNGModule } from '../primeng/prime.module';
 
 
 @NgModule({
@@ -17,6 +18,10 @@ import { LayoutAutorComponent } from './pages/layout-autor/layout-autor.componen
   ],
   imports: [
     CommonModule,
+    AutorRoutingModule,
+    PrimeNGModule
+  ],
+  exports:[
     AutorRoutingModule
   ]
 })

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Autor } from '../interfaces/libreria.interface';
 import { DaoLibreria } from '../interfaces/dao/dao.interface';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environmets } from '../environments/environments.dev';
 
@@ -19,7 +19,10 @@ export class AutorService implements DaoLibreria<Autor, string>{
 
   getAll(): Observable<Autor[]> {
 
-    return this.http.get<Array<Autor>>('');
+    return this.http.get<Array<Autor>>(`${this.baseURL}/${this.endPoint}`)
+                    .pipe(
+                      catchError( ()=> of([]))
+                    );
   }
 
   delete(k: string): Boolean {

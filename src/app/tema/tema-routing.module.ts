@@ -11,7 +11,7 @@ const routes: Routes = [
     component:LayoutTemaComponent,
     children:[
       {path:'list', component: ListTemaComponent},
-      {path:'edit', component: EditTemaComponent},
+      {path:'edit/:id', component: EditTemaComponent},
       {path:'new', component: NewTemaComponent},
       {path:'**', redirectTo: 'list'},
     ]

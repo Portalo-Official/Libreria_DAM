@@ -6,6 +6,7 @@ import { ListEdicionComponent } from './pages/list-edicion/list-edicion.componen
 import { EditEdicionComponent } from './pages/edit-edicion/edit-edicion.component';
 import { NewEdicionComponent } from './pages/new-edicion/new-edicion.component';
 import { LayoutEdicionComponent } from './pages/layout-edicion/layout-edicion.component';
+import { PrimeNGModule } from '../primeng/prime.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LayoutEdicionComponent } from './pages/layout-edicion/layout-edicion.co
   ],
   imports: [
     CommonModule,
-    EdicionRoutingModule
-  ]
+    EdicionRoutingModule,
+    PrimeNGModule
+  ],
 })
 export class EdicionModule { }
