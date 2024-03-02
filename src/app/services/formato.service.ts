@@ -13,6 +13,8 @@ export class FormatoService implements DaoLibreria<Formato, string>{
   private baseURL  : string = environmets.baseUrl;
   private endPoint : string = environmets.endPoint.formato;
   constructor( private http: HttpClient) { }
+  list?: Formato[] | undefined;
+
 
   getAll() : Observable<Array<Formato>>{
     return this.http.get<Array<Formato>>(`${this.baseURL}/${this.endPoint}`)
@@ -20,16 +22,17 @@ export class FormatoService implements DaoLibreria<Formato, string>{
                       catchError( () => of([]))
                     );
   }
-
-  delete(k: string): Boolean{
-    return true;
+  delete(k: string): Observable<Boolean> {
+    throw new Error('Method not implemented.');
+  }
+  getByID(k: string): Observable<Formato[]> {
+    throw new Error('Method not implemented.');
+  }
+  update(t: Formato): Observable<Formato | null> {
+    throw new Error('Method not implemented.');
+  }
+  create(t: Formato): Observable<Formato | null> {
+    throw new Error('Method not implemented.');
   }
 
-  getByID(k : string): Observable<Array<Formato>>{
-    return new Observable();
-  }
-
-  update(t : Formato): Boolean{
-    return true;
-  }
 }

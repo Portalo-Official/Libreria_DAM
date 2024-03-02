@@ -1,0 +1,5 @@
+.app-main{
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}

@@ -17,6 +17,7 @@ export class AutorService implements DaoLibreria<Autor, string>{
 
   constructor( private http : HttpClient ) { }
 
+
   getAll(): Observable<Autor[]> {
 
     return this.http.get<Array<Autor>>(`${this.baseURL}/${this.endPoint}`)
@@ -24,16 +25,16 @@ export class AutorService implements DaoLibreria<Autor, string>{
                       catchError( ()=> of([]))
                     );
   }
-
-  delete(k: string): Boolean {
-    throw new Error('Method not implemented.');
-  }
-
   getByID(k: string): Observable<Autor[]> {
     throw new Error('Method not implemented.');
   }
-
-  update(t: Autor): Boolean {
+  delete(k: string): Observable<Boolean> {
+    throw new Error('Method not implemented.');
+  }
+  update(t: Autor): Observable<Autor | null> {
+    throw new Error('Method not implemented.');
+  }
+  create(t: Autor): Observable<Autor | null> {
     throw new Error('Method not implemented.');
   }
 

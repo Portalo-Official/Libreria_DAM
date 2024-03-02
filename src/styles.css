@@ -1,6 +1,7 @@
 @import "primeicons/primeicons.css";
 body{
   margin: 0;
+  height: 100vh;
 }
 
 /*
@@ -24,4 +25,5 @@ body{
 }
 ::ng-deep .p-card{
   height: 200px;
+
 }

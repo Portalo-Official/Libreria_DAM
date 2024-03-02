@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of, map } from 'rxjs';
 
@@ -17,6 +17,7 @@ export class LibroService implements DaoLibreria<Libro, string>{
   list?: Libro[] | undefined;
   constructor(private http : HttpClient) { }
 
+
   getAll(): Observable<Libro[]>{
     let url = `${this.BaseURL}/${this.endpoint}`;
     return this.http.get<Array<Libro>>(url)
@@ -25,9 +26,7 @@ export class LibroService implements DaoLibreria<Libro, string>{
                     );
   }
 
-  delete(k: string): Boolean {
-    throw new Error('Method not implemented.');
-  }
+
 
   /**
    * Buscar el libro por el ISBN, retornando una lista de libro conteniendo
@@ -39,13 +38,51 @@ export class LibroService implements DaoLibreria<Libro, string>{
 
     return this.http.get<ResponseLibro>(`${this.BaseURL}/${this.endpoint}/isbn/${k}`)
     .pipe(
-      map( resp => [resp.Data]),
+      map( resp => [resp.Data as Libro]),
       catchError( () => of([]))
       );
     }
-    update(t: Libro): Boolean {
-      throw new Error('Method not implemented.');
+
+    delete(k: string): Observable<Boolean> {
+      let options = {
+        header : new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}),
+        body : {
+                ISBN: k
+                }
+      };
+      return this.http.delete<ResponseLibro>(`${this.BaseURL}/${this.endpoint}`, options)
+                        .pipe(
+                          map(resp => resp.Data as Boolean),
+                          catchError( () => of(false))
+                        );
     }
+    update(t: Libro): Observable<Libro | null> {
+      let options = {
+        header : new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}),
+        body : t
+      };
+
+      let url : string = `${this.BaseURL}/${this.endpoint}`;
+      return this.http.put<ResponseLibro>(url, options)
+                      .pipe(
+                        map( resp => resp.Data as Libro | null),
+                        catchError(() => of(null))
+                      );
+
+    }
+    create(t: Libro): Observable<Libro | null> {
+      let options = {
+        header : new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}),
+        body : t
+      };
+      let url : string = `${this.BaseURL}/${this.endpoint}`;
+      return this.http.post<ResponseLibro>(url, options)
+                      .pipe(
+                        map( resp => resp.Data as Libro | null),
+                        catchError(() => of(null))
+                      );
+    }
+
     // console.log(params.getAll('ISBN'));
     // let requestLibro = JSON.stringify({ISBN : k});
 

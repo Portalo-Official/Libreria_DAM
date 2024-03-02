@@ -16,20 +16,25 @@ export class TemaService implements DaoLibreria<Tema, string>{
   constructor( private http : HttpClient) { }
 
 
+
   public getAll(): Observable<Tema[]>{
     return this.http.get<Array<Tema>>(`${this.baseURL}/${this.endPoint}`)
                     .pipe(
                       catchError( () => of([]))
                     );
   }
-  delete(k: string): Boolean {
-    throw new Error('Method not implemented.');
-  }
+
   getByID(k: string): Observable<Tema[]> {
     throw new Error('Method not implemented.');
   }
-  update(t: Tema): Boolean {
+
+  delete(k: string): Observable<Boolean> {
     throw new Error('Method not implemented.');
   }
-
+  update(t: Tema): Observable<Tema | null> {
+    throw new Error('Method not implemented.');
+  }
+  create(t: Tema): Observable<Tema | null> {
+    throw new Error('Method not implemented.');
+  }
 }

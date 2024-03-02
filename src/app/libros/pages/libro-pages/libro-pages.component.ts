@@ -1,5 +1,5 @@
+import { Libro } from './../../../interfaces/libreria.interface';
 import { Component, Input, OnInit } from '@angular/core';
-import { Libro } from '../../../interfaces/libreria.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LibroService } from '../../../services/libro.service';
 import { switchMap } from 'rxjs';
@@ -10,7 +10,14 @@ import { switchMap } from 'rxjs';
 @Component({
   selector: 'app-libro-pages',
   templateUrl: './libro-pages.component.html',
-  styles: ``
+  styles: `
+            .img-card-libro{
+              max-height: 70vh;
+            }
+            .papi{
+
+            }
+          `
 })
 export class LibroPagesComponent implements OnInit{
   @Input()
@@ -30,11 +37,24 @@ export class LibroPagesComponent implements OnInit{
           switchMap( params => this.libroService.getByID(params['isbn']))
         )
         .subscribe( resp =>{
-          // console.log("llego a libro "+ resp[0].Autor);
-          this.libro= resp[0]
+          // console.log(resp[0].Tema);
+
+          this.libro= resp[0];
+
+          // console.log(this.libro.Tema.Tipo);
         }
         )
 
+  }
+
+  public borrarLibro(){
+    this.libroService.delete(this.libro.ISBN).subscribe(resp=>{
+
+      // TODO que una ventana o mensajeme diga que el libro se borro
+      console.log(resp);
+
+    }
+    );
   }
 
 

@@ -10,11 +10,12 @@ export interface DaoLibreria<T, K>{
 
   getAll(): Observable<Array<T>>;
 
-  delete(k: K): Boolean;
+  delete(k: K): Observable<Boolean>;
 
   getByID(k : K): Observable<Array<T>>;
 
-  update(t : T): Boolean;
+  update(t : T): Observable<T | null>;
 
+  create(t: T): Observable<T | null>;
 
 }

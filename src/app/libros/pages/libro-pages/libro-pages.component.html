@@ -1,53 +1,63 @@
-<div class="flex">
-<img [src]="libro.URL" alt="">
+<div class="papi  flex p-4 gap-6 justify-content-center  align-items-center ">
+  <img [src]="libro.URL" alt="" class="img-card-libro">
 
-<div class="surface-section">
-  {{libro.Titulo}}
-  <div class="font-medium text-3xl text-900 mb-3"></div>
-  <div class="text-500 mb-5"> {{libro.Autor}} </div>
-  <ul class="list-none p-0 m-0">
-      <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
-          <div class="text-500 w-6 md:w-2 font-medium">Titulo</div>
-          <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{{libro.Titulo}}</div>
-          <div class="w-6 md:w-2 flex justify-content-end">
-              <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button>
-          </div>
-      </li>
-      <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
-          <div class="text-500 w-6 md:w-2 font-medium">Genre</div>
-          <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-              <p-chip [label]="libro.Tema.Tipo" class="mr-2"></p-chip>
-              <p-chip label="Drama" class="mr-2"></p-chip>
-              <p-chip label="Thriller"></p-chip>
-          </div>
-          <div class="w-6 md:w-2 flex justify-content-end">
-              <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button>
-          </div>
-      </li>
-      <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+  <div class=" flex flex-column justify-content-between">
+    {{libro.Titulo}}
+    <div class="font-medium text-3xl text-900 mb-3"></div>
+    <div class="text-500 mb-5"> {{libro.Autor}} </div>
+    <ul class="list-none p-0 m-0">
+        <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+            <div class="text-500 w-6 md:w-2 font-medium">Titulo</div>
+            <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{{libro.Titulo}}</div>
+
+        </li>
+        <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
           <div class="text-500 w-6 md:w-2 font-medium">Autor</div>
           <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1"> {{libro.Autor}}</div>
-          <div class="w-6 md:w-2 flex justify-content-end">
-              <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button>
-          </div>
+
       </li>
-      <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
-          <div class="text-500 w-6 md:w-2 font-medium">Actors</div>
-          <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">Robert De Niro, Al Pacino</div>
-          <div class="w-6 md:w-2 flex justify-content-end">
-              <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button>
+        <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+            <div class="text-500 w-6 md:w-2 font-medium">Tema</div>
+            <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                <p-chip [label]="libro.Tema" class="mr-2"></p-chip>
+            </div>
+
+        </li>
+
+        <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+            <div class="text-500 w-6 md:w-2 font-medium">Edicion</div>
+            <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                <p-chip [label]="libro.Edicion" class="mr-2"></p-chip>
+            </div>
+
+        </li>
+        <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+          <div class="text-500 w-6 md:w-2 font-medium">Formato</div>
+          <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+              <p-chip [label]="libro.Formato" class="mr-2"></p-chip>
           </div>
-      </li>
-      <li class="flex align-items-center py-3 px-2 border-top-1 border-bottom-1 surface-border flex-wrap">
-          <div class="text-500 w-6 md:w-2 font-medium">Plot</div>
-          <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1 line-height-3">
-              A group of professional bank robbers start to feel the heat from police
-               when they unknowingly leave a clue at their latest heist.</div>
           <div class="w-6 md:w-2 flex justify-content-end">
-              <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button>
           </div>
-      </li>
-  </ul>
-</div>
+        </li>
+        <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+            <div class="text-500 w-6 md:w-2 font-medium">Precio</div>
+            <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{{libro.Precio  | currency:'EUR':true }} </div>
+
+        </li>
+        <li class="flex align-items-center py-3 px-2 border-top-1 border-bottom-1 surface-border flex-wrap">
+            <div class="text-500 w-6 md:w-2 font-medium">Plot</div>
+            <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1 line-height-3">
+                A group of professional bank robbers start to feel the heat from police
+                when they unknowingly leave a clue at their latest heist.</div>
+            <div class="w-6 md:w-2 flex justify-content-end">
+            </div>
+          </li>
+        </ul>
+        <div class="w-full  flex justify-content-end p-4 gap-2">
+          <p-button  pRipple label="" icon="pi pi-pencil" [outlined]="true" [rounded]="true"></p-button>
+          <p-button pRipple icon="pi pi-trash" [rounded]="true" [outlined]="true" severity="danger"
+                    (onClick)="borrarLibro()" ></p-button>
+        </div>
+  </div>
 
 </div>

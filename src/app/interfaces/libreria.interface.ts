@@ -1,30 +1,33 @@
 
+
 export interface Libro {
-  Id:       number;
+  Id?:       number;
   ISBN:     string;
   Titulo:   string;
   Precio:   number;
-  Tema:     Tema;
+  Tema:     string;
   Autor:    string;
-  Edicion:  Edicion;
-  Formato:  Formato;
+  Edicion:  string;
+  Formato:  string;
   Cantidad: number;
   URL:      string;
 }
+
 export interface Autor {
-  Id:     number;
+  Id?:     number;
   Nombre: string;
 }
 
 export interface Edicion {
-  Id:   number;
+  Id?:   number;
   Tipo: string;
 }
 export interface Tema {
-  Id:   number;
-  Tipo: string;
+  Id?:   number,
+  Tipo: string,
 }
 export interface Formato {
-  Id:   number;
+  Id?:   number;
   Tipo: string;
 }
+

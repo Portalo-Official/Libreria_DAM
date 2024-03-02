@@ -16,19 +16,24 @@ export class EdicionService implements DaoLibreria<Edicion, string> {
 
   constructor( private http : HttpClient) { }
 
+
   getAll(): Observable<Edicion[]> {
     return this.http.get<Array<Edicion>>(`${this.baseURL}/${this.endPoint}`)
                     .pipe(
                       catchError( () => of([]))
                     );
   }
-  delete(k: string): Boolean {
-    throw new Error('Method not implemented.');
-  }
+
   getByID(k: string): Observable<Edicion[]> {
     throw new Error('Method not implemented.');
   }
-  update(t: Edicion): Boolean {
+  delete(k: string): Observable<Boolean> {
+    throw new Error('Method not implemented.');
+  }
+  update(t: Edicion): Observable<Edicion | null> {
+    throw new Error('Method not implemented.');
+  }
+  create(t: Edicion): Observable<Edicion | null> {
     throw new Error('Method not implemented.');
   }
 }
