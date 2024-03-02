@@ -7,6 +7,10 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { PanelModule} from "primeng/panel";
 import { SkeletonModule } from 'primeng/skeleton';
 import { ChipModule } from 'primeng/chip';
+import { InputMaskModule } from 'primeng/inputmask';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [],
@@ -24,6 +28,11 @@ import { ChipModule } from 'primeng/chip';
     MenubarModule,
     PanelModule,
     SkeletonModule,
+    InputMaskModule,
+    DropdownModule,
+    InputTextModule,
+    InputNumberModule,
+
   ]
 })
 export class PrimeNGModule { }

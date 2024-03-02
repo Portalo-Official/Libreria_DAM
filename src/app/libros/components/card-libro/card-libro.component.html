@@ -1,4 +1,4 @@
-<p-card [header]="(libro.Titulo | slice:0:12 )+'...'" [subheader]="libro.Autor" class="p-0 min-w-min">
+<p-card [header]="(libro.Titulo | slice:0:12 ) + (libro.Titulo.length > 12 ? '...' : '')" [subheader]="libro.Autor" class="p-0 min-w-min">
   <ng-template pTemplate="header">
     <shared-lazy-image [url]="libro.URL" [name]="libro.Titulo || 'No name'"  ></shared-lazy-image>
     <!-- <img [alt]="libro.Titulo" [src]="libro.URL" /> -->

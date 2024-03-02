@@ -15,7 +15,7 @@ export class ListPageComponent implements OnInit{
   ngOnInit(): void {
     this.libroService.getAll()
                     .subscribe( resp =>{
-                      console.log(resp);
+                      // console.log(resp);
 
                       this.libros = resp;
                     });

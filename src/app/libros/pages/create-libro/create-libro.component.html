@@ -1,0 +1,51 @@
+<h1 class="w-full ml-3">Crear Libro</h1>
+<hr>
+<section class="flex flex-column p-2 align-items-center ">
+  <h3 class="w-full text-center">Nuevo Libro</h3>
+
+  <div class="formgrid grid h-full gap-3 mt-4">
+    <!-- ? Columna 1 -->
+    <div class="field col">
+      <!-- ! ISBN -->
+      <span class="p-float-label mb-5">
+        <p-inputMask  mask="9999999999999"  id="isbn_input"></p-inputMask>
+        <label for="isbn_input">ISBN</label>
+      </span>
+      <!-- ! Autor -->
+      <span class="p-float-label mb-5">
+        <input pInputText pKeyFilter="alpha"  />
+
+        <label for="autor_input">Autor</label>
+      </span>
+
+      <!-- ! Temas -->
+      <p-dropdown [options]="temas"  optionLabel="Tipo"  placeholder="Selecciona un Tema" styleClass="mb-5"></p-dropdown>
+
+      <!-- ! Formatos -->
+      <p-dropdown formControlName="selectedFormato" [options]="formatos" optionLabel="Tipo" placeholder="Selecciona un formato" styleClass="mb-5"></p-dropdown>
+
+      <!-- ! Ediciones -->
+      <p-dropdown formControlName="selectedFormato" [options]="ediciones" optionLabel="Tipo" placeholder="Selecciona una Edicion" styleClass="mb-5"></p-dropdown>
+      <!-- <p-dropdown [options]="temas" [(ngModel)]="selectedTema" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown> -->
+
+    </div>
+    <!-- ? Columna 2 -->
+    <div class="field col">
+      <!-- ! Titulo -->
+      <span class="p-float-label  mb-5">
+        <input pInputText id="titulo_input"  />
+        <label for="titulo_input">Titulo</label>
+      </span>
+      <!-- ! Precio -->
+      <span class="p-float-label mb-5">
+        <!-- <p-inputMask  mask="?9999.99"  id="precio_input"></p-inputMask> -->
+        <p-inputNumber  inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="2"> </p-inputNumber>
+        <!-- <p-inputNumber [(ngModel)]="Precio" inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="5"> </p-inputNumber> -->
+        <label for="precio_input">Precio</label>
+      </span>
+
+    </div>
+
+  </div>
+
+</section>

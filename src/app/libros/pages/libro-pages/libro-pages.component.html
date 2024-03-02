@@ -54,7 +54,7 @@
           </li>
         </ul>
         <div class="w-full  flex justify-content-end p-4 gap-2">
-          <p-button  pRipple label="" icon="pi pi-pencil" [outlined]="true" [rounded]="true"></p-button>
+          <p-button  pRipple icon="pi pi-pencil" [outlined]="true" [rounded]="true" [routerLink]="'/libros/edit/'+libro.ISBN"></p-button>
           <p-button pRipple icon="pi pi-trash" [rounded]="true" [outlined]="true" severity="danger"
                     (onClick)="borrarLibro()" ></p-button>
         </div>

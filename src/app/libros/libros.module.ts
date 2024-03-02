@@ -10,6 +10,8 @@ import { LibroRoutingModule } from './libros-routing.module';
 import { PrimeNGModule } from '../primeng/prime.module';
 import { CardLibroComponent } from './components/card-libro/card-libro.component';
 import { SharedModule } from '../shared/shared.module';
+import { EditLibroComponent } from './pages/edit-libro/edit-libro.component';
+import { CreateLibroComponent } from './pages/create-libro/create-libro.component';
 
 
 
@@ -21,7 +23,9 @@ import { SharedModule } from '../shared/shared.module';
     ListPageComponent,
     LayoutPagesComponent,
     LibroPagesComponent,
-    CardLibroComponent
+    CardLibroComponent,
+    EditLibroComponent,
+    CreateLibroComponent
   ],
   imports: [
     CommonModule,
