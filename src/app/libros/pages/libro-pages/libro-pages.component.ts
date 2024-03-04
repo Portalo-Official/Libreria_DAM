@@ -43,7 +43,7 @@ export class LibroPagesComponent implements OnInit{
 
           // console.log(this.libro.Tema.Tipo);
         }
-        )
+        );
 
   }
 

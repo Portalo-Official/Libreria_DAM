@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, of, map } from 'rxjs';
 
 import { environmets } from '../environments/environments.dev';
-import { Libro } from '../interfaces/libreria.interface';
+import { Libro, Formato } from '../interfaces/libreria.interface';
 import { DaoLibreria } from '../interfaces/dao/dao.interface';
 import { ResponseLibro } from '../interfaces/response.interface';
+import { log } from 'console';
 
 
 @Injectable({
@@ -59,11 +60,19 @@ export class LibroService implements DaoLibreria<Libro, string>{
     update(t: Libro): Observable<Libro | null> {
       let options = {
         header : new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}),
-        body : t
+        body : {
+                ISBN: t.ISBN,
+                Precio: t.Precio,
+                Tema: t.Tema,
+                Autor: t.Autor,
+                Edicion: t.Edicion,
+                Formato: t.Formato,
+                cantidad: t.Cantidad
+              }
       };
 
       let url : string = `${this.BaseURL}/${this.endpoint}`;
-      return this.http.put<ResponseLibro>(url, options)
+      return this.http.put<ResponseLibro>(url, t)
                       .pipe(
                         map( resp => resp.Data as Libro | null),
                         catchError(() => of(null))
@@ -73,12 +82,22 @@ export class LibroService implements DaoLibreria<Libro, string>{
     create(t: Libro): Observable<Libro | null> {
       let options = {
         header : new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}),
-        body : t
+        body : {
+          ISBN: t.ISBN,
+          Precio: t.Precio,
+          Tema: t.Tema,
+          Autor: t.Autor,
+          Edicion: t.Edicion,
+          Formato: t.Formato,
+          cantidad: t.Cantidad
+        }
       };
       let url : string = `${this.BaseURL}/${this.endpoint}`;
-      return this.http.post<ResponseLibro>(url, options)
+      return this.http.post<ResponseLibro>(url, t)
                       .pipe(
-                        map( resp => resp.Data as Libro | null),
+                        map( resp => {
+                                      console.log(resp.Error);
+                                      return resp.Data as Libro | null}),
                         catchError(() => of(null))
                       );
     }

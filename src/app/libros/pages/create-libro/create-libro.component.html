@@ -1,51 +1,133 @@
 <h1 class="w-full ml-3">Crear Libro</h1>
-<hr>
-<section class="flex flex-column p-2 align-items-center ">
+<hr />
+<section class="flex flex-column p-2 align-items-center">
   <h3 class="w-full text-center">Nuevo Libro</h3>
 
-  <div class="formgrid grid h-full gap-3 mt-4">
+  <form [formGroup]="libroForm"
+        (ngSubmit)="onSubmit()"
+        class="formgrid grid h-full gap-3 mt-4" >
     <!-- ? Columna 1 -->
     <div class="field col">
       <!-- ! ISBN -->
-      <span class="p-float-label mb-5">
-        <p-inputMask  mask="9999999999999"  id="isbn_input"></p-inputMask>
-        <label for="isbn_input">ISBN</label>
-      </span>
-      <!-- ! Autor -->
-      <span class="p-float-label mb-5">
-        <input pInputText pKeyFilter="alpha"  />
+      <div class=" felx flex-column mb-5">
+        <span class="p-float-label">
+          <p-inputMask mask="9999999999999" formControlName="ISBN" id="isbn_input"></p-inputMask>
+          <label for="isbn_input">ISBN</label>
+        </span>
 
-        <label for="autor_input">Autor</label>
-      </span>
+        <span class="text-red-200 "
+              *ngIf="libroForm.controls['ISBN'].getError('required')&&libroForm.controls['ISBN'].touched">
+          <h5 class="p-0 m-0">Debe ser 13 digitos</h5>
+        </span>
+      </div>
+      <!-- ! Autor -->
+      <div class=" mb-5">
+        <span class="p-float-label">
+          <input pInputText formControlName="Autor" pKeyFilter="alpha" />
+          <label for="autor_input">Autor</label>
+        </span>
+        <span class="text-red-200 "
+        *ngIf="libroForm.controls['Autor'].getError('pattern')">
+          <h5 class="p-0 m-0">No pueden ser caracteres especiales </h5>
+          <h5 class="p-0 m-0">ni empezar por espacios</h5>
+        </span>
+        <span class="text-red-200 "
+        *ngIf="libroForm.controls['Autor'].getError('required')&&libroForm.controls['Autor'].touched">
+          <h5 class="p-0 m-0">Este campo es obligatorio</h5>
+        </span>
+    </div>
 
       <!-- ! Temas -->
-      <p-dropdown [options]="temas"  optionLabel="Tipo"  placeholder="Selecciona un Tema" styleClass="mb-5"></p-dropdown>
-
-      <!-- ! Formatos -->
-      <p-dropdown formControlName="selectedFormato" [options]="formatos" optionLabel="Tipo" placeholder="Selecciona un formato" styleClass="mb-5"></p-dropdown>
+      <div>
+        <p-dropdown
+          formControlName="Tema"
+          [options]="temas"
+          (onClick)="loadTemas()"
+          optionLabel="Tipo"
+          placeholder="Selecciona un Tema"
+          styleClass="mb-5"
+        ></p-dropdown>
+      </div>
 
       <!-- ! Ediciones -->
-      <p-dropdown formControlName="selectedFormato" [options]="ediciones" optionLabel="Tipo" placeholder="Selecciona una Edicion" styleClass="mb-5"></p-dropdown>
+      <div>
+        <p-dropdown
+        formControlName="Edicion"
+        [options]="ediciones"
+        optionLabel="Tipo"
+        (onClick)="loadEdiciones()"
+        placeholder="Selecciona una Edicion"
+        styleClass="mb-5"
+        ></p-dropdown>
+      </div>
       <!-- <p-dropdown [options]="temas" [(ngModel)]="selectedTema" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown> -->
-
     </div>
     <!-- ? Columna 2 -->
-    <div class="field col">
+    <div class="field col ">
       <!-- ! Titulo -->
-      <span class="p-float-label  mb-5">
-        <input pInputText id="titulo_input"  />
-        <label for="titulo_input">Titulo</label>
+      <div class=" mb-5">
+        <span class="p-float-label">
+          <input
+          pInputText
+          formControlName="Titulo"
+          id="titulo_input" />
+          <label for="titulo_input">Titulo</label>
+        </span>
+        <span class="text-red-200 "
+        *ngIf="libroForm.controls['Titulo'].getError('required')&&libroForm.controls['Titulo'].touched">
+        <h5 class="p-0 m-0">Este campo es obligatorio</h5>
       </span>
+    </div>
       <!-- ! Precio -->
       <span class="p-float-label mb-5">
-        <!-- <p-inputMask  mask="?9999.99"  id="precio_input"></p-inputMask> -->
-        <p-inputNumber  inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="2"> </p-inputNumber>
-        <!-- <p-inputNumber [(ngModel)]="Precio" inputId="minmaxfraction" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="5"> </p-inputNumber> -->
+        <p-inputNumber
+          formControlName="Precio"
+          inputId="minmaxfraction"
+          mode="decimal"
+          [minFractionDigits]="2"
+          [maxFractionDigits]="2"
+        >
+        </p-inputNumber>
         <label for="precio_input">Precio</label>
+        <span class="text-red-200 "
+              *ngIf="libroForm.controls['Precio'].getError('min')&&libroForm.controls['Precio'].touched">
+          <h5 class="p-0 m-0">Tiene que ser ser minimo 1</h5>
+        </span>
       </span>
-
+       <!-- ! Formatos -->
+       <div>
+        <p-dropdown
+          formControlName="Formato"
+          [options]="formatos"
+          (onClick)="loadFormatos()"
+          optionLabel="Tipo"
+          placeholder="Selecciona un Formtao"
+          styleClass="mb-5"
+        ></p-dropdown>
+      </div>
+      <div class="flex w-full justify-content-end  align-items-end">
+        <p-button pRipple label="Crear libro" icon="pi pi-plus" [rounded]="true" [outlined]="true" severity="success"
+                        (onClick)="onSubmit()" [disabled]="!libroForm.valid"></p-button>
+      </div>
     </div>
-
-  </div>
-
+  </form>
+  <p-messages></p-messages>
+  <!-- <div>
+    <p-button pRipple label="Crear libro" icon="pi pi-plus" [rounded]="true" [outlined]="true" severity="success"
+                    (onClick)="onSubmit()" ></p-button>
+  </div> -->
+  <!-- <div>
+    <span>ISBN - Valid</span>
+    <pre>{{libroForm.controls['ISBN'].valid| json}} </pre>
+    <span>ISBN - Errors</span>
+    <pre>{{libroForm.controls['ISBN'].errors| json}} </pre>
+    <span>Valido</span>
+    <pre>{{libroForm.valid | json}} </pre>
+    <span>Touched</span>
+    <pre>{{libroForm.touched | json}} </pre>
+    <span>Pristine</span>
+    <pre>{{libroForm.pristine | json}} </pre>
+    <span>Value</span>
+    <pre>{{libroForm.value | json}} </pre>
+  </div> -->
 </section>

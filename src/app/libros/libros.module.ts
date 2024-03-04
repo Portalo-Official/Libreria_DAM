@@ -12,6 +12,7 @@ import { CardLibroComponent } from './components/card-libro/card-libro.component
 import { SharedModule } from '../shared/shared.module';
 import { EditLibroComponent } from './pages/edit-libro/edit-libro.component';
 import { CreateLibroComponent } from './pages/create-libro/create-libro.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,13 +26,14 @@ import { CreateLibroComponent } from './pages/create-libro/create-libro.componen
     LibroPagesComponent,
     CardLibroComponent,
     EditLibroComponent,
-    CreateLibroComponent
+    CreateLibroComponent,
   ],
   imports: [
     CommonModule,
     LibroRoutingModule,
     PrimeNGModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
   ]
 })
 export class LibrosModule { }

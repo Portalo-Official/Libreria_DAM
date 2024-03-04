@@ -8,6 +8,8 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { MessagesModule } from 'primeng/messages';
+import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +23,12 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    MessagesModule
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

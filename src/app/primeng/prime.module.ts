@@ -11,7 +11,7 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
-
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
   declarations: [],
   imports: [
@@ -32,7 +32,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     DropdownModule,
     InputTextModule,
     InputNumberModule,
-
+    MessagesModule,
   ]
 })
 export class PrimeNGModule { }
