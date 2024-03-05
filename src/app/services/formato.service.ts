@@ -23,16 +23,25 @@ export class FormatoService implements DaoLibreria<Formato, string>{
                     );
   }
   delete(k: string): Observable<Boolean> {
-    throw new Error('Method not implemented.');
+    return this.http.delete<Boolean>(`${this.baseURL}/${this.endPoint}`, {body:{id:k}})
+    .pipe(
+      catchError( () => of(false))
+    );
   }
   getByID(k: string): Observable<Formato[]> {
     throw new Error('Method not implemented.');
   }
   update(t: Formato): Observable<Formato | null> {
-    throw new Error('Method not implemented.');
+    return this.http.put<Formato>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Tipo})
+    .pipe(
+      catchError( () => of(null))
+    );
   }
   create(t: Formato): Observable<Formato | null> {
-    throw new Error('Method not implemented.');
+    return this.http.post<Formato>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Tipo})
+    .pipe(
+      catchError( () => of(null))
+    );
   }
 
 }

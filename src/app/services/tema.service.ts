@@ -29,12 +29,21 @@ export class TemaService implements DaoLibreria<Tema, string>{
   }
 
   delete(k: string): Observable<Boolean> {
-    throw new Error('Method not implemented.');
+    return this.http.delete<Boolean>(`${this.baseURL}/${this.endPoint}/~{k}`)
+                    .pipe(
+                      catchError( () => of(false))
+                    );
   }
   update(t: Tema): Observable<Tema | null> {
-    throw new Error('Method not implemented.');
+    return this.http.put<Tema>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Tipo})
+                    .pipe(
+                      catchError( () => of(null))
+                    );
   }
   create(t: Tema): Observable<Tema | null> {
-    throw new Error('Method not implemented.');
+    return this.http.post<Tema>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Tipo})
+                    .pipe(
+                      catchError( () => of(null))
+                    );
   }
 }
