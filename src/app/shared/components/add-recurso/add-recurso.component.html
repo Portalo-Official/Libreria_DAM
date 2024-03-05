@@ -13,7 +13,7 @@
     <div *ngIf="!isValid()">
       <h5 class="p-0 m-0 text-red-200" >{{messageError}} </h5>
     </div>
-      <p-button pRipple [label]="'Modificar '+tipo" icon="pi pi-pencil" [rounded]="true" [outlined]="true" severity="success"
+      <p-button pRipple [label]="modo+' '+tipo" icon="pi pi-pencil" [rounded]="true" [outlined]="true" severity="success"
       (onClick)="emitirNewElement()" [disabled]="!fieldForm.valid" styleClass="mt-3"></p-button>
   </div>
 </form>

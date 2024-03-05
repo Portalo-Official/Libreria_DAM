@@ -14,11 +14,10 @@ export class NewTemaComponent {
   private temas: Tema[];
   public oldTema: string ;
   public nuevoTemna?: Tema;
-  public idTema: number=0;
+
   constructor(
     private temaService: TemaService,
     private messageService: MessageService,
-    private activatedRoute: ActivatedRoute,
   ) {
     this.oldTema = '';
     this.temas = [];
@@ -32,9 +31,7 @@ export class NewTemaComponent {
       // TODO -> Si nos meten un id falso, que direccione not found
       // this.oldTema= this.temas.filter( t => t.Id == this.idTema).pop()?.Tipo as string;
     });
-    this.activatedRoute.params.subscribe(params => {
-      this.idTema = params['id'] as number;
-    });
+
 
   }
 
@@ -44,20 +41,20 @@ export class NewTemaComponent {
 
   createTema(temaCreate: any) {
 
-    this.temaService.create({Id:this.idTema, Tipo: temaCreate })
+    this.temaService.create({ Tipo: temaCreate })
       .subscribe(resp => {
-        if (resp) {
+        if (resp != null) {
           this.nuevoTemna = resp;
           this.messageService.add({
             severity: 'success',
             summary: 'Tema ' + resp.Tipo,
-            detail: 'Modificado'
+            detail: 'Creado'
           });
         } else
           this.messageService.add({
             severity: 'error',
             summary: 'Error: ',
-            detail: 'No se pudo modificar el tema '+this.oldTema
+            detail: 'No se pudo crear el tema '+this.oldTema
           });
       });
   }

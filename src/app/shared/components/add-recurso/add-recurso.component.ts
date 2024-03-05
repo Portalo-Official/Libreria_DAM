@@ -10,7 +10,8 @@ export class AddRecursoComponent implements OnInit{
 
   @Input() listElements! : string[];
   @Input() oldElement! : string;
-  @Input() tipo! : string;
+  @Input() tipo! : string; // Si es Tema, Autor, Formato o Edicion
+  @Input() modo! : string; // Si esta en crear o modificar
   @Output() emitNewNombre: EventEmitter<string>;
 
   fieldForm!: FormGroup;

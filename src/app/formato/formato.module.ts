@@ -7,6 +7,7 @@ import { ListFormatoComponent } from './pages/list-formato/list-formato.componen
 import { EditFormatoComponent } from './pages/edit-formato/edit-formato.component';
 import { LayoutFormatoComponent } from './pages/layout-formato/layout-formato.component';
 import { PrimeNGModule } from '../primeng/prime.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PrimeNGModule } from '../primeng/prime.module';
   imports: [
     CommonModule,
     FormatoRoutingModule,
-    PrimeNGModule
+    PrimeNGModule,
+    SharedModule
   ]
 })
 export class FormatoModule { }

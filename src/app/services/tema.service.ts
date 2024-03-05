@@ -41,7 +41,7 @@ export class TemaService implements DaoLibreria<Tema, string>{
                     );
   }
   create(t: Tema): Observable<Tema | null> {
-    return this.http.post<Tema>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Tipo})
+    return this.http.post<Tema>(`${this.baseURL}/${this.endPoint}`, { name:t.Tipo})
                     .pipe(
                       catchError( () => of(null))
                     );

@@ -1,1 +1,11 @@
-<p>edit-formato works!</p>
+<div class=>
+  <h2 class="w-full text-center pt-2">Editar Tema</h2>
+    <hr class="mb-3">
+    <shared-add-recurso
+      [listElements]="getFormatos()"
+      [oldElement]="oldFormato"
+      tipo="Formato"
+      modo="Modificar"
+      (emitNewNombre)="updateFormato($event)"></shared-add-recurso>
+  </div>
+  <p-messages></p-messages>

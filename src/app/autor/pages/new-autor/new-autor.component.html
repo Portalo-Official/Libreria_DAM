@@ -1,1 +1,11 @@
-<p>new-autor works!</p>
+<div class=>
+  <h2 class="w-full text-center pt-2">Crear Tema</h2>
+    <hr class="mb-3">
+    <shared-add-recurso
+      [listElements]="getAutores()"
+      [oldElement]="oldAutor"
+      tipo="Autor"
+      modo="Crear"
+      (emitNewNombre)="createAutor($event)"></shared-add-recurso>
+  </div>
+  <p-messages></p-messages>
