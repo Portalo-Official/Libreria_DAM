@@ -7,6 +7,7 @@ import { EditTemaComponent } from './pages/edit-tema/edit-tema.component';
 import { ListTemaComponent } from './pages/list-tema/list-tema.component';
 import { LayoutTemaComponent } from './pages/layout-tema/layout-tema.component';
 import { PrimeNGModule } from '../primeng/prime.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,12 +15,14 @@ import { PrimeNGModule } from '../primeng/prime.module';
     NewTemaComponent,
     EditTemaComponent,
     ListTemaComponent,
-    LayoutTemaComponent
+    LayoutTemaComponent,
+
   ],
   imports: [
     CommonModule,
     TemaRoutingModule,
-    PrimeNGModule
+    PrimeNGModule,
+    SharedModule,
   ]
 })
 export class TemaModule { }

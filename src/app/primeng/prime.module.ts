@@ -12,6 +12,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 @NgModule({
   declarations: [],
   imports: [
@@ -33,6 +35,8 @@ import { MessagesModule } from 'primeng/messages';
     InputTextModule,
     InputNumberModule,
     MessagesModule,
+    ToastModule,
+    DynamicDialogModule,
   ]
 })
 export class PrimeNGModule { }

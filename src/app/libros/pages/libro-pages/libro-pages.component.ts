@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LibroService } from '../../../services/libro.service';
 import { switchMap } from 'rxjs';
+// import { DialogService } from 'primeng/dynamicdialog';
 // import { ActivatedRoute } from '@angular/router';
 // import { Router } from 'express';
 // import { LibroService } from '../../../services/libro.service';
@@ -26,7 +27,8 @@ export class LibroPagesComponent implements OnInit{
   constructor(
               private activatedRoute : ActivatedRoute,
               private router : Router,
-              private libroService: LibroService
+              private libroService: LibroService,
+              // private dialogService: DialogService,
               ){}
 
   ngOnInit(): void {
@@ -57,6 +59,20 @@ export class LibroPagesComponent implements OnInit{
     );
   }
 
+  // updateLibro(libro: any): void {
+  //   this.dialogRef = this.dialogService.open(EditarLibroComponent, {
+  //     header: 'Editar Libro',
+  //     width: '80%',
+  //     height: '80%',
+  //     contentStyle: { 'height': '150px' },
+  //     data: { libro: libro }
+  //   });
+  //   this.dialogRef.onClose.subscribe((response: any) => {
+  //     if (response) {
+  //       this.getData();
+  //     }
+  //   });
+  // }
 
 
 }

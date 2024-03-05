@@ -25,7 +25,7 @@ export class EditLibroComponent implements OnInit{
   public isbns : string[] = [];
   public libro?: Libro;
   public libroForm! : FormGroup;
-
+  public contBusqueda:number=0;
 
 
   constructor(
@@ -82,7 +82,7 @@ export class EditLibroComponent implements OnInit{
               [
                 Validators.required,
                 Validators.minLength(1),
-                Validators.pattern('[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]+[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\\s]+'),
+                Validators.pattern('[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ.]+[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\\s.]+'),
                 // Validators.pattern('^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$'),
               ]
             ],
@@ -107,7 +107,7 @@ export class EditLibroComponent implements OnInit{
           this.libro= resp[0];
           this.setValuesForm();
         }
-        )
+        );
 
     // this.libroForm = new FormGroup({
     //   ISBN : new FormControl<string>('', {nonNullable:true}),
@@ -123,7 +123,10 @@ export class EditLibroComponent implements OnInit{
 
 
   }
-
+   /**
+   * Establece los valores del DOM en el formulario
+   * @returns
+   */
   setValuesForm(): void{
     this.libroForm.setValue({
       ISBN: this.libro?.ISBN || '',
@@ -135,6 +138,7 @@ export class EditLibroComponent implements OnInit{
       Edicion: '',
       Cantidad:'',
     });
+    // this.libroForm.reset(this.libro);
     this.libroForm.get('ISBN')!.disable();
   }
 
@@ -186,5 +190,27 @@ export class EditLibroComponent implements OnInit{
       Cantidad: this.libro!.Cantidad,
       URL: this.libro!.URL || '',
     }
+  }
+
+  hasLoeaded(): boolean{
+    setTimeout(()=>{
+
+    }, 2000)
+    if(!this.libro && this.contBusqueda<4)
+      setTimeout(() => {
+        this.activatedRoute.params
+        .pipe(
+          switchMap( params => this.libroService.getByID(params['isbn']))
+        )
+        .subscribe( resp =>{
+          console.log(resp);
+          this.libro= resp[0];
+
+          this.setValuesForm();
+        }
+        );
+      }, 5000);
+      this.contBusqueda++;
+    return this.libro!=null;
   }
 }

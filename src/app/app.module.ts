@@ -23,7 +23,8 @@ import { MessageService } from 'primeng/api';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    MessagesModule
+    MessagesModule,
+
   ],
   providers: [
     provideClientHydration(),

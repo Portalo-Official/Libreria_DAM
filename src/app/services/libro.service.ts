@@ -16,7 +16,10 @@ export class LibroService implements DaoLibreria<Libro, string>{
   private BaseURL: string = environmets.baseUrl;
   private endpoint: string = environmets.endPoint.libros;
   list?: Libro[] | undefined;
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) {
+
+
+  }
 
 
   getAll(): Observable<Libro[]>{
@@ -27,7 +30,9 @@ export class LibroService implements DaoLibreria<Libro, string>{
                     );
   }
 
-
+  updateList():void{
+    this.getAll().subscribe(resp=>this.list);
+  }
 
   /**
    * Buscar el libro por el ISBN, retornando una lista de libro conteniendo

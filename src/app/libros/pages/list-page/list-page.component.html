@@ -1,5 +1,7 @@
 <h2>Libros</h2>
 <hr>
+<p-button  pRipple label="Crear libro" icon="pi pi-plus" [outlined]="true" [rounded]="true" routerLink="/libros/create"></p-button>
+<hr>
 <div class="grid overflow-hidden min-w-min p-2">
   <div class="col sm:col-5  md:col-4 xl:col-2 "
         *ngFor="let libro of libros">
