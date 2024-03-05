@@ -1,1 +1,11 @@
-<p>new-edicion works!</p>
+<div class=>
+  <h2 class="w-full text-center pt-2">Crear Edición</h2>
+    <hr class="mb-3">
+    <shared-add-recurso
+      [listElements]="getEdiciones()"
+      [oldElement]="oldEdicion"
+      tipo="Edicion"
+      modo="Crear"
+      (emitNewNombre)="createEdicion($event)"></shared-add-recurso>
+  </div>
+  <p-messages></p-messages>

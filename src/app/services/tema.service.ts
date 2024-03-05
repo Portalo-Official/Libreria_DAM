@@ -29,7 +29,7 @@ export class TemaService implements DaoLibreria<Tema, string>{
   }
 
   delete(k: string): Observable<Boolean> {
-    return this.http.delete<Boolean>(`${this.baseURL}/${this.endPoint}/~{k}`)
+    return this.http.delete<Boolean>(`${this.baseURL}/${this.endPoint}`, {body:{id:k}})
                     .pipe(
                       catchError( () => of(false))
                     );

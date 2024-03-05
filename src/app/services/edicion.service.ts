@@ -28,12 +28,21 @@ export class EdicionService implements DaoLibreria<Edicion, string> {
     throw new Error('Method not implemented.');
   }
   delete(k: string): Observable<Boolean> {
-    throw new Error('Method not implemented.');
+    return this.http.delete<Boolean>(`${this.baseURL}/${this.endPoint}`, {body:{id:k}})
+    .pipe(
+      catchError( () => of(false))
+    );
   }
   update(t: Edicion): Observable<Edicion | null> {
-    throw new Error('Method not implemented.');
+    return this.http.put<Edicion>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Tipo})
+    .pipe(
+      catchError( () => of(null))
+    );
   }
   create(t: Edicion): Observable<Edicion | null> {
-    throw new Error('Method not implemented.');
+    return this.http.post<Edicion>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Tipo})
+    .pipe(
+      catchError( () => of(null))
+    );
   }
 }

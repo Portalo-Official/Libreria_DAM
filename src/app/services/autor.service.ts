@@ -29,13 +29,22 @@ export class AutorService implements DaoLibreria<Autor, string>{
     throw new Error('Method not implemented.');
   }
   delete(k: string): Observable<Boolean> {
-    throw new Error('Method not implemented.');
+    return this.http.delete<Boolean>(`${this.baseURL}/${this.endPoint}`, {body:{id:k}})
+    .pipe(
+      catchError( () => of(false))
+    );
   }
   update(t: Autor): Observable<Autor | null> {
-    throw new Error('Method not implemented.');
+    return this.http.put<Autor>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Nombre})
+    .pipe(
+      catchError( () => of(null))
+    );
   }
   create(t: Autor): Observable<Autor | null> {
-    throw new Error('Method not implemented.');
+    return this.http.post<Autor>(`${this.baseURL}/${this.endPoint}`, {id:t.Id, name:t.Nombre})
+    .pipe(
+      catchError( () => of(null))
+    );
   }
 
 }
