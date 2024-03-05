@@ -7,6 +7,7 @@ import { EditEdicionComponent } from './pages/edit-edicion/edit-edicion.componen
 import { NewEdicionComponent } from './pages/new-edicion/new-edicion.component';
 import { LayoutEdicionComponent } from './pages/layout-edicion/layout-edicion.component';
 import { PrimeNGModule } from '../primeng/prime.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PrimeNGModule } from '../primeng/prime.module';
   imports: [
     CommonModule,
     EdicionRoutingModule,
-    PrimeNGModule
+    PrimeNGModule,
+    SharedModule,
   ],
 })
 export class EdicionModule { }

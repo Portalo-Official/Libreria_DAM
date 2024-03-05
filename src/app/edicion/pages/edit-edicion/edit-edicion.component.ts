@@ -37,11 +37,11 @@ export class EditEdicionComponent {
 
   }
 
-  getAutores(): Array<string> {
+  getEdiciones(): Array<string> {
     return this.ediciones.map(t => t.Tipo);
   }
 
-  updateAutor(autorUpdate: string) {
+  updateEdicion(autorUpdate: string) {
 
     this.edicionService.update({Id:this.idTema, Tipo: autorUpdate })
       .subscribe(resp => {
