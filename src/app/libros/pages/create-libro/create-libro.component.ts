@@ -119,11 +119,7 @@ export class CreateLibroComponent implements OnInit{
   }
 
   onSubmit():void{
-    // console.log({
-    //   formIsValid: this.libroForm.valid,
-    //   value: this.libroForm.value,
-    //   rawValue: this.libroForm.getRawValue(),
-    // })
+
     if(!this.libroForm.invalid){
       console.log(this.createLibro());
 

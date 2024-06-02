@@ -54,7 +54,6 @@ export class AddRecursoComponent implements OnInit{
       this.messageError='Este campo es requerido.';
     else if(this.fieldForm.controls['Nombre'].getError('pattern'))
       this.messageError='No pueder ser carácteres especiales.';
-    // console.log(this.fieldForm.controls['Nombre'].errors);
   }
 
 

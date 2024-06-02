@@ -20,8 +20,6 @@ export class LibroService implements DaoLibreria<Libro, string>{
 
 
   }
-
-
   getAll(): Observable<Libro[]>{
     let url = `${this.BaseURL}/${this.endpoint}`;
     return this.http.get<Array<Libro>>(url)
@@ -29,11 +27,9 @@ export class LibroService implements DaoLibreria<Libro, string>{
                       catchError( () => of([]))
                     );
   }
-
   updateList():void{
     this.getAll().subscribe(resp=>this.list);
   }
-
   /**
    * Buscar el libro por el ISBN, retornando una lista de libro conteniendo
    * el resultado de la busqueda
@@ -63,18 +59,6 @@ export class LibroService implements DaoLibreria<Libro, string>{
                         );
     }
     update(t: Libro): Observable<Libro | null> {
-      let options = {
-        header : new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}),
-        body : {
-                ISBN: t.ISBN,
-                Precio: t.Precio,
-                Tema: t.Tema,
-                Autor: t.Autor,
-                Edicion: t.Edicion,
-                Formato: t.Formato,
-                cantidad: t.Cantidad
-              }
-      };
 
       let url : string = `${this.BaseURL}/${this.endpoint}`;
       return this.http.put<ResponseLibro>(url, t)
@@ -85,18 +69,7 @@ export class LibroService implements DaoLibreria<Libro, string>{
 
     }
     create(t: Libro): Observable<Libro | null> {
-      let options = {
-        header : new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}),
-        body : {
-          ISBN: t.ISBN,
-          Precio: t.Precio,
-          Tema: t.Tema,
-          Autor: t.Autor,
-          Edicion: t.Edicion,
-          Formato: t.Formato,
-          cantidad: t.Cantidad
-        }
-      };
+
       let url : string = `${this.BaseURL}/${this.endpoint}`;
       return this.http.post<ResponseLibro>(url, t)
                       .pipe(
